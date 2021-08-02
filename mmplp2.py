@@ -2,6 +2,7 @@
 
 import csv
 import json
+import time
 
 from pathlib import Path
 from pprint import pprint
@@ -22,18 +23,30 @@ def load_election(data_path):
     return election
 
 
+def apportion_webster(census, seats):
+    total_pop = sum(census.values())
+    divisor = total_pop / seats
+
+    while True:
+        reps = {
+            district: round(pop / divisor)
+            for district, pop in census.items()
+        }
+        current_seats = sum(reps.values())
+        if current_seats == seats: break
+
+        error_factor = current_seats / seats
+        divisor *= error_factor
+
+    return reps
+
+
 if __name__ == '__main__':
     election = load_election('ballots/de2013.json')
-    pprint(election['census'])
 
     minimum_seats = 1
-    maximum_seats = election['seats']
     K = election['divisor']
 
-    census_seats = {state: [0, 0.0] for state in election['census']}
+    reps = apportion_webster(election['census'], election['seats'])
 
-    for state in election['census']:
-        pass
-
-    total_pop = sum(election['census'].values())
-    print(total_pop)
+    pprint(reps)
