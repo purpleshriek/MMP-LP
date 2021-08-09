@@ -1,0 +1,24 @@
+{
+  "name": "German Bundestag election, 2013",
+  "apportionment": "Germany",
+  "census": {
+    "Baden-Württemberg": 9482902,
+    "Bayern": 11353264,
+    "Berlin": 3025288,
+    "Brandenburg": 2418267,
+    "Bremen": 575805,
+    "Hamburg": 1559655,
+    "Hessen": 5388350,
+    "Mecklenburg-Vorpommern": 1585032,
+    "Niedersachsen": 7354892,
+    "Nordrhein-Westfalen": 15895182,
+    "Rheinland-Pfalz": 3672888,
+    "Saarland": 919402,
+    "Sachsen": 4005278,
+    "Sachsen-Anhalt": 2247673,
+    "Schleswig-Holstein": 2686085,
+    "Thüringen": 2154202
+  },
+  "seats": 598,
+  "data": "bundestag2013.csv"
+}

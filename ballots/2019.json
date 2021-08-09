@@ -1,0 +1,10 @@
+{
+    "name": "2019",
+    "apportionment": "Ebert",
+    "type": "approval",
+    "census": {
+        "2019": 22732
+    },
+    "divisor": 0.5,
+    "data": "2019.csv"
+}

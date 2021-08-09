@@ -1,0 +1,65 @@
+# election name
+2019
+
+# apportionment method
+Ebert
+
+# ballot type
+Approval
+
+# census
+2019	22732
+
+# census revision
+
+# divisor
+0.5
+
+# votes
+Ballot	Count	State	Cons.	Type			
+0	9	2019	2019	Cons.	G	S	
+0	9	2019	2019	List	G	S	
+1	1	2019	2019	Cons.	G	S	D
+1	1	2019	2019	List	G	S	D
+2	3	2019	2019	Cons.	G		
+2	3	2019	2019	List	G		
+3	6	2019	2019	Cons.	S	G	
+3	6	2019	2019	List	S	G	
+4	5	2019	2019	Cons.	S		
+4	5	2019	2019	List	S		
+5	3	2019	2019	Cons.	S	D	
+5	3	2019	2019	List	S	D	
+6	1	2019	2019	Cons.	S	G	D
+6	1	2019	2019	List	S	G	D
+7	1	2019	2019	Cons.	G	D	
+7	1	2019	2019	List	G	D	
+8	2	2019	2019	Cons.	G	S	
+8	2	2019	2019	List	G	S	
+9	3	2019	2019	Cons.	G	S	D
+9	3	2019	2019	List	G	S	D
+10	12	2019	2019	Cons.	D		
+10	12	2019	2019	List	D		
+11	1	2019	2019	Cons.	D	F	
+11	1	2019	2019	List	D	F	
+12	2	2019	2019	Cons.	D	L	
+12	2	2019	2019	List	D	L	
+13	7	2019	2019	Cons.	P	G	
+13	7	2019	2019	List	P	G	
+14	6	2019	2019	Cons.	D	F	
+14	6	2019	2019	List	D	F	
+15	7	2019	2019	Cons.	F		
+15	7	2019	2019	List	F		
+16	1	2019	2019	Cons.	F	N	
+16	1	2019	2019	List	F	N	
+17	2	2019	2019	Cons.	F	L	
+17	2	2019	2019	List	F	L	
+18	23	2019	2019	Cons.	L		
+18	23	2019	2019	List	L		
+19	1	2019	2019	Cons.	D	L	
+19	1	2019	2019	List	D	L	
+20	1	2019	2019	Cons.	L	N	
+20	1	2019	2019	List	L	N	
+21	2	2019	2019	Cons.	N		
+21	2	2019	2019	List	N		
+22	1	2019	2019	Cons.	F	N	
+22	1	2019	2019	List	F	N	

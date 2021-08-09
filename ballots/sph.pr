@@ -1,0 +1,32 @@
+# election name
+SeqPhrag
+
+# apportionment method
+SeqPhrag
+
+# ballot type
+Approval
+
+# census
+SeqPhrag	22732
+
+# divisor
+0.5
+
+# elimination
+
+# seats
+3
+
+# votes
+Ballot	Count	State	Cons.	Type			
+0	1	SeqPhrag	SeqPhrag	Cons.	A	
+0	1	SeqPhrag	SeqPhrag	List	A	
+1	1	SeqPhrag	SeqPhrag	Cons.	B	
+1	1	SeqPhrag	SeqPhrag	List	B	
+2	1	SeqPhrag	SeqPhrag	Cons.	B	C	
+2	1	SeqPhrag	SeqPhrag	List	B	C	
+3	1	SeqPhrag	SeqPhrag	Cons.	A	B	C
+3	1	SeqPhrag	SeqPhrag	List	A	B	C
+4	1	SeqPhrag	SeqPhrag	Cons.	D	
+4	1	SeqPhrag	SeqPhrag	List	D	

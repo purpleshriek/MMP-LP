@@ -1,0 +1,24 @@
+{
+  "name": "German Bundestag election, 2017",
+  "apportionment": "Germany",
+  "census": {
+    "Baden-Württemberg": 9365001,
+    "Bayern": 11362245,
+    "Berlin": 2975745,
+    "Brandenburg": 2391746,
+    "Bremen": 568510,
+    "Hamburg": 1525090,
+    "Hessen": 5281198,
+    "Mecklenburg-Vorpommern": 1548400,
+    "Niedersachsen": 7278789,
+    "Nordrhein-Westfalen": 15707569,
+    "Rheinland-Pfalz": 3661245,
+    "Saarland": 899748,
+    "Sachsen": 3914671,
+    "Sachsen-Anhalt": 2145671,
+    "Schleswig-Holstein": 2673803,
+    "Thüringen": 2077901
+  },
+  "seats": 598,
+  "data": "de2017.csv"
+}

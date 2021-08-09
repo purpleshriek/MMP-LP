@@ -1,0 +1,138 @@
+# election name
+Scottish Parliament election, 2021
+
+# apportionment method
+Scotland
+
+# ballot type
+FPTP
+
+# census
+Central Scotland	669424
+Glasgow	703978
+Highlands and Islands	448311
+Lothian	786439
+Mid Scotland and Fife	668930
+North East Scotland	768973
+South Scotland	682329
+West Scotland	709716
+
+# divisor
+1.0
+
+# fixed regional list tier
+7
+
+# seats
+129
+
+# votes
+			SNP			Conservative			Labour			Scottish Greens			Liberal Democrats		
+Constituency	Cons. Seat
+Party	Total
+List Votes	Cons.
+Votes	List
+Votes	% List
+Votes	Cons.
+Votes	List
+Votes	% List
+Votes	Cons.
+Votes	List
+Votes	% List
+Votes	Cons.
+Votes	List
+Votes	% List
+Votes	Cons.
+Votes	List
+Votes	% List
+Votes
+Airdrie and Shotts	SNP		16,139			4,422			10,671			0			562		
+Coatbridge and Chryston	SNP		20,577			3,028			11,140			0			622		
+Cumbernauld and Kilsyth	SNP		19,633			3,375			9,792			0			678		
+East Kilbride	SNP		21,149			5,923			12,477			0			1,217		
+Falkirk East	SNP		18,417			7,618			10,832			0			1,007		
+Falkirk West	SNP		21,492			7,343			9,653			0			1,115		
+Hamilton, Larkhall and Stonehouse	SNP		16,761			6,332			12,179			0			1,012		
+Motherwell and Wishaw	SNP		18,156			4,472			10,343			0			557		
+Uddingston and Bellshill	SNP		17,953			4,569			12,647			0			821		
+Central Scotland		311,767	170,277	148,399	47.60%	47,082	59,896	19.21%	99,734	77,623	24.90%	0	19,512	6.26%	7,591	6,337	2.03%
+																	
+Glasgow Anniesland	SNP		17,501			3,688			10,913			0			1,063		
+Glasgow Cathcart	SNP		21,728			4,041			11,332			0			1,051		
+Glasgow Kelvin	SNP		14,535			2,850			8,605			9,077			977		
+Glasgow Maryhill and Springburn	SNP		16,428			2,241			8,504			0			688		
+Glasgow Pollok	SNP		18,163			1,849			11,058			1,651			522		
+Glasgow Provan	SNP		15,913			2,687			8,683			2,366			421		
+Glasgow Shettleston	SNP		17,465			4,421			9,440			0			774		
+Glasgow Southside	SNP		19,735			1,790			10,279			0			504		
+Rutherglen	SNP		20,249			3,663			15,083			0			1,112		
+Glasgow		287,225	161,717	133,917	46.62%	27,230	37,027	12.89%	93,897	74,088	25.79%	13,094	36,114	12.57%	7,112	6,079	2.12%
+																	
+Argyll and Bute	SNP		16,608			7,645			2,436			0			6,874		
+Caithness, Sutherland and Ross	SNP		15,889			5,170			2,016			0			13,298		
+Inverness and Nairn	SNP		21,793			12,679			5,370			2,636			2,892		
+Moray	SNP		19,987			16,823			2,972			0			1,165		
+Na h-Eileanan an Iar	SNP		7,454			2,116			4,013			0			353		
+Orkney	Liberal Democrats		3,369			699			290			0			7,238		
+Shetland	Liberal Democrats		4,997			503			424			0			5,803		
+Skye, Lochaber and Badenoch	SNP		24,192			8,331			3,855			0			6,778		
+Highlands and Islands		224,425	114,289	96,433	42.97%	53,966	60,779	27.08%	21,376	22,713	10.12%	2,636	17,729	7.90%	44,401	26,771	11.93%
+																	
+Almond Valley	SNP		22,675			6,952			10,545			0			1,601		
+Edinburgh Central	SNP		16,276			11,544			6,839			3,921			2,555		
+Edinburgh Eastern	SNP		22,658			5,970			12,541			0			2,035		
+Edinburgh Northern and Leith	SNP		22,443			5,052			10,874			6,116			2,035		
+Edinburgh Pentlands	SNP		16,227			12,330			6,998			0			2,213		
+Edinburgh Southern	Labour		16,738			5,258			20,760			0			2,189		
+Edinburgh Western	Liberal Democrats		15,693			2,798			2,515			0			25,578		
+Linlithgow	SNP		22,693			9,472			12,588			0			2,126		
+Midlothian North and Musselburgh	SNP		21,165			6,521			13,259			0			1,630		
+Lothian		375,179	176,568	141,478	37.71%	65,897	78,595	20.95%	96,919	76,689	20.44%	10,037	49,984	13.32%	41,962	28,433	7.58%
+																	
+Clackmannanshire and Dunblane	SNP		16,504			8,953			8,292			0			1,194		
+Cowdenbeath	SNP		16,499			4,758			10,486			1,344			1,088		
+Dunfermline	SNP		20,048			6,314			11,384			0			3,196		
+Fife North East	Liberal Democrats		14,715			2,323			1,056			0			22,163		
+Kirkcaldy	SNP		18,417			4,891			10,586			0			1,015		
+Mid Fife and Glenrothes	SNP		18,115			4,500			7,881			0			1,789		
+Perthshire North	SNP		19,860			15,807			2,324			0			1,802		
+Perthshire South and Kinross-shire	SNP		20,126			18,178			2,943			0			2,823		
+Stirling	SNP		19,882			12,987			6,556			0			1,466		
+Mid Scotland and Fife		329,503	164,166	136,825	41.52%	78,711	85,909	26.07%	61,508	52,626	15.97%	1,344	28,654	8.70%	36,536	25,489	7.74%
+																	
+Aberdeen Central	SNP		14,217			7,623			6,294			2,087			1,417		
+Aberdeen Donside	SNP		18,514			9,488			5,505			0			2,162		
+Aberdeen South and North Kincardine	SNP		16,500			14,829			4,505			0			2,889		
+Aberdeenshire East	SNP		18,307			16,418			2,900			0			3,396		
+Aberdeenshire West	Conservative		16,319			19,709			2,382			0			3,363		
+Angus North and Mearns	SNP		17,144			13,635			2,686			0			1,804		
+Angus South	SNP		19,568			13,451			3,625			0			1,964		
+Banffshire and Buchan Coast	SNP		14,920			14,148			2,169			0			1,071		
+Dundee City East	SNP		19,230			5,630			5,893			0			1,431		
+Dundee City West	SNP		19,818			3,327			6,899			0			1,269		
+North East Scotland		340,313	174,537	147,910	43.46%	118,258	110,555	32.49%	42,858	41,062	12.07%	2,087	22,735	6.68%	20,766	18,051	5.30%
+																	
+Ayr	SNP		18,881			18,711			4,766			0			808		
+Carrick, Cumnock and Doon Valley	SNP		15,240			10,903			8,604			0			875		
+Clydesdale	SNP		17,596			13,018			8,960			0			1,144		
+Dumfriesshire	Conservative		15,421			19,487			4,671			0			1,314		
+East Lothian	SNP		17,968			9,470			16,789			0			1,556		
+Ettrick, Roxburgh and Berwickshire	Conservative		11,701			18,564			2,050			1,084			2,352		
+Galloway and West Dumfries	Conservative		14,851			17,486			2,932			970			948		
+Kilmarnock and Irvine Valley	SNP		21,418			8,295			9,737			0			919		
+Midlothian South, Tweeddale and Lauderdale	SNP		19,807			12,981			5,410			2,154			2,615		
+South Scotland		347,093	152,883	136,741	39.40%	128,915	121,730	35.07%	63,919	57,236	16.49%	4,208	18,964	5.46%	12,531	12,422	3.58%
+																	
+Clydebank and Milngavie	SNP		17,787			4,153			12,513			0			2,987		
+Cunninghame North	SNP		18,227			10,451			7,536			0			967		
+Cunninghame South	SNP		15,208			6,621			7,256			0			715		
+Dumbarton	Labour		16,342			3,205			17,825			0			676		
+Eastwood	Conservative		15,695			17,911			6,759			0			911		
+Greenock and Inverclyde	SNP		19,713			3,313			11,539			0			1,033		
+Paisley	SNP		17,495			3,342			11,420			1,584			1,124		
+Renfrewshire North and West	SNP		17,704			8,734			10,397			0			933		
+Renfrewshire South	SNP		17,532			5,149			10,426			0			826		
+Strathkelvin and Bearsden	SNP		21,064			9,580			8,510			0			6,675		
+West Scotland		359,295	176,767	152,671	42.49%	72,459	82,640	23.00%	104,181	83,782	23.32%	1,584	26,632	7.41%	16,847	13,570	3.78%
+																	
+Scotland		2,574,800	1,291,204	1,094,374	42.50%	592,518	637,131	24.74%	584,392	485,819	18.87%	34,990	220,324	8.56%	187,746	137,152	5.33%
