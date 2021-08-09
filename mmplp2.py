@@ -1,14 +1,11 @@
 #!/usr/bin/env python3
 
-import csv
 import itertools
-import json
-import time
 
 from collections import defaultdict, Counter
-from pathlib import Path
 from pprint import pprint
 
+import common
 
 def process_votes_german(row):
     list_keys = [name for name in row if name.endswith('List')]
@@ -29,39 +26,6 @@ def process_votes_german(row):
     processed_row['Cons Votes'] = cons_votes
 
     return processed_row
-
-
-def load_election(data_path):
-    filepath = Path(data_path)
-    basedir = filepath.parents[0]
-
-    with open(filepath) as f:
-        election = json.loads(f.read())
-
-    data_filename = basedir / election['data']
-    with open(data_filename) as f:
-        reader = csv.DictReader(f, delimiter=',')
-        election['data'] = list(reader)
-
-    return election
-
-
-def apportion_highest_averages(weights, seats, divisor, min_seats=0,
-                               starting_seats=None):
-    reps = {district: min_seats for district in weights}
-    if starting_seats:
-        reps.update(starting_seats)
-
-    def score(district):
-        return weights[district] * (1 / (1 + (reps[district] / divisor)))
-
-    allocated = sum(reps.values())
-
-    for i in range(allocated, seats):
-        next_district = max(reps, key=score)
-        reps[next_district] += 1
-
-    return reps
 
 
 def apportion_national_seats(weights, minimum_total, minimum_party, divisor=0.5):
@@ -102,7 +66,8 @@ def apportion_state_seats_by_party(reps, rows, **kwargs):
 
     for state, party_votes in state_party_votes.items():
         state_seats[state] = \
-            apportion_highest_averages(party_votes, reps[state], **kwargs)
+            common.apportion_highest_averages(party_votes, reps[state],
+                                              **kwargs)
 
     return state_seats
 
@@ -119,20 +84,11 @@ def determine_overhang(constituency, proportional):
     return overhang_votes
 
 
-def flip_hierarchy(hierarchy_votes):
-    remapped = defaultdict(dict)
-    for a, a_votes in hierarchy_votes.items():
-        for b, votes in a_votes.items():
-            remapped[b][a] = votes
-
-    return dict(remapped)
-
-
 def run_german_election(election):
     election['data'] = [process_votes_german(row) for row in election['data']]
 
-    reps = apportion_highest_averages(election['census'], election['seats'],
-                                      divisor=0.5)
+    reps = common.apportion_highest_averages(election['census'],
+                                             election['seats'], divisor=0.5)
 
     for row in election['data']:
         row['Cons Party'] = max(row['Cons Votes'], key=row['Cons Votes'].get)
@@ -170,29 +126,25 @@ def run_german_election(election):
 
     state_votes = group_party_list_votes_by_state(election['data'])
 
-    state_votes_by_party = flip_hierarchy(state_votes)
+    state_votes_by_party = common.flip_hierarchy(state_votes)
 
-    constituency_party = flip_hierarchy(constituency_seats)
-
-    pprint(national_seats)
+    constituency_party = common.flip_hierarchy(constituency_seats)
 
     final_vote = {}
 
     for party, state_votes in state_votes_by_party.items():
-        print(party)
         starting_seats = constituency_party.get(party, {})
         total_party = national_seats.get(party, 0)
 
-        alloc = apportion_highest_averages(state_votes,
-                                           total_party,
-                                           starting_seats=starting_seats,
-                                           divisor=0.5)
+        alloc = common.apportion_highest_averages(state_votes, total_party,
+                                                  starting_seats=starting_seats,
+                                                  divisor=0.5)
         final_vote[party] = alloc
 
-    final_vote = flip_hierarchy(final_vote)
+    final_vote = common.flip_hierarchy(final_vote)
     pprint(final_vote)
 
 
 if __name__ == '__main__':
-    election = load_election('ballots/de2017.json')
+    election = common.load_election('ballots/de2017.json')
     run_german_election(election)
