@@ -1,19 +1,27 @@
 import csv
+import gzip
 import json
 
 from pathlib import Path
 from collections import defaultdict
 
 
+def open_maybe_compressed(path, mode='rt'):
+    if path.suffix == '.gz':
+        return gzip.open(path, mode)
+    else:
+        return open(path, mode)
+
+
 def load_election(data_path):
     filepath = Path(data_path)
     basedir = filepath.parents[0]
 
-    with open(filepath) as f:
+    with open_maybe_compressed(filepath) as f:
         election = json.loads(f.read())
 
     data_filename = basedir / election['data']
-    with open(data_filename) as f:
+    with open_maybe_compressed(data_filename) as f:
         reader = csv.DictReader(f, delimiter=',')
         election['data'] = list(reader)
 
