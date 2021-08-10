@@ -15,7 +15,7 @@ def process_params(supplied):
     return defaults
 
 
-def run_election(election, params):
+def run_election(election, params, csv=False):
     list_fields = [f for f in election['data'][0].keys() if f.endswith('List')]
 
     party_votes = {}
@@ -38,4 +38,8 @@ def run_election(election, params):
         print(f'Warning: Expected {election["seats"]} seats, got {total_seats}')
         print()
 
-    common.render_data(election['name'], combined_seats, ['Party', 'Seats'])
+    labels = ['Party', 'Seats']
+    if csv:
+        common.render_csv(combined_seats, labels)
+    else:
+        common.render_data(election['name'], combined_seats, labels)

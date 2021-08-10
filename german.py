@@ -93,7 +93,7 @@ def process_params(supplied):
     return defaults
 
 
-def run_german_election(election, params):
+def run_german_election(election, params, csv=False):
     election['data'] = [process_votes_german(row) for row in election['data']]
 
     reps = common.apportion_highest_averages(election['census'],
@@ -152,6 +152,11 @@ def run_german_election(election, params):
         final_vote[party] = alloc
 
     final_vote = common.flip_hierarchy(final_vote)
-    common.render_data(election['name'], final_vote, ['Land', 'Party', 'Seats'])
+
+    labels = ['Land', 'Party', 'Seats']
+    if csv:
+        common.render_csv(final_vote, labels)
+    else:
+        common.render_data(election['name'], final_vote, labels)
 
 

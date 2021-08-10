@@ -28,6 +28,8 @@ if __name__ == '__main__':
                         metavar=('NAME', 'VALUE'), help='Override parameters '
                         'for the apportionment method.')
 
+    parser.add_argument('--csv', action='store_true', help='Output as CSV.')
+
     args = parser.parse_args()
 
     election = common.load_election(args.definition)
@@ -49,5 +51,5 @@ if __name__ == '__main__':
         provided_params.update(dict(args.param))
 
     params = process_params(provided_params)
-    run_election(election, params)
+    run_election(election, params, csv=args.csv)
 

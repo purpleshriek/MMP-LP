@@ -1,6 +1,7 @@
 import csv
 import gzip
 import json
+import sys
 
 from pathlib import Path
 from collections import defaultdict
@@ -80,15 +81,8 @@ def flip_hierarchy(hierarchy_votes):
 def flatten_data(data):
     for k, v in data.items():
         try:
-            first = True
-            depth = 0
             for t in flatten_data(v):
-                if first:
-                    yield (k, *t)
-                    depth = len(t)
-                else:
-                    yield ('', *t)
-                first = False
+                yield (k, *t)
         except AttributeError:
             yield (k, v)
 
@@ -108,5 +102,18 @@ def render_data(name, data, fields):
     print(header_line)
     print('=' * len(header_line))
 
+    last = None
     for row in flat:
-        print(' | '.join(f'{item:>{w}}' for item, w in zip(row, col_widths)))
+        render = row
+        if last:
+            render = [(ce if ce != le else '') for ce, le in zip(last[:-1], row)]
+        render = (*render, row[-1])
+        print(' | '.join(f'{item:>{w}}' for item, w in zip(render, col_widths)))
+        last = row
+
+def render_csv(data, fields):
+    writer = csv.writer(sys.stdout)
+
+    writer.writerow(fields)
+    for row in flatten_data(data):
+        writer.writerow(row)
