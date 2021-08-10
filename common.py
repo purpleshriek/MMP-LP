@@ -53,3 +53,37 @@ def flip_hierarchy(hierarchy_votes):
 
     return dict(remapped)
 
+
+def flatten_data(data):
+    for k, v in data.items():
+        try:
+            first = True
+            depth = 0
+            for t in flatten_data(v):
+                if first:
+                    yield (k, *t)
+                    depth = len(t)
+                else:
+                    yield ('', *t)
+                first = False
+        except AttributeError:
+            yield (k, v)
+
+
+def render_data(name, data, fields):
+    flat = list(flatten_data(data))
+    data_widths = [max(len(str(row[col])) for row in flat)
+                   for col in range(len(flat[0]))]
+    col_widths = [max(len(field), data_len)
+                  for field, data_len in zip(fields, data_widths)]
+
+    header_line = ' | '.join(f'{f:^{w}}' for f, w in zip(fields, col_widths))
+
+    print(f'{name:^{len(header_line)}}')
+    print()
+
+    print(header_line)
+    print('=' * len(header_line))
+
+    for row in flat:
+        print(' | '.join(f'{item:>{w}}' for item, w in zip(row, col_widths)))

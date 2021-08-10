@@ -140,6 +140,6 @@ def run_german_election(election):
         final_vote[party] = alloc
 
     final_vote = common.flip_hierarchy(final_vote)
-    return final_vote
+    common.render_data(election['name'], final_vote, ['Land', 'Party', 'Seats'])
 
 

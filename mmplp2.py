@@ -24,8 +24,7 @@ if __name__ == '__main__':
 
     try:
         fun = run_election_types[election['apportionment']]
-        results = fun(election)
-        pprint(results)
+        fun(election)
     except KeyError:
         print(textwrap.dedent(f"""\
         Invalid apportionment method "{election['apportionment']}"
