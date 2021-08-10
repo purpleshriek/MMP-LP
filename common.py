@@ -45,6 +45,29 @@ def apportion_highest_averages(weights, seats, divisor, min_seats=0,
 
     return reps
 
+def indefinite_highest_averages(weights, seats, starting_seats, divisor,
+                                min_seats=0):
+    reps = {district: min_seats for district in weights}
+
+    def score(district):
+        return weights[district] * (1 / (1 + (reps[district] / divisor)))
+
+    def finished(current):
+        if sum(current.values()) < seats:
+            return False
+
+        if any(current[party] < starting_seats[party]
+               for party in starting_seats):
+            return False
+        return True
+
+    while not finished(reps):
+        next_district = max(reps, key=score)
+        reps[next_district] += 1
+
+    return reps
+
+
 def flip_hierarchy(hierarchy_votes):
     remapped = defaultdict(dict)
     for a, a_votes in hierarchy_votes.items():
