@@ -4,7 +4,6 @@ from collections import defaultdict, Counter
 
 import common
 
-
 def process_votes_german(row):
     list_keys = [name for name in row if name.endswith('List')]
     cons_keys = [name for name in row if name.endswith('Cons')]
@@ -82,11 +81,24 @@ def determine_overhang(constituency, proportional):
     return overhang_votes
 
 
-def run_german_election(election):
+def process_params(supplied):
+    defaults = {
+        'divisor': 0.5,
+    }
+    if supplied:
+        defaults.update(supplied)
+
+    defaults['divisor'] = float(defaults['divisor'])
+
+    return defaults
+
+
+def run_german_election(election, params):
     election['data'] = [process_votes_german(row) for row in election['data']]
 
     reps = common.apportion_highest_averages(election['census'],
-                                             election['seats'], divisor=0.5)
+                                             election['seats'],
+                                             divisor=params['divisor'])
 
     for row in election['data']:
         row['Cons Party'] = max(row['Cons Votes'], key=row['Cons Votes'].get)
@@ -97,7 +109,7 @@ def run_german_election(election):
     }
 
     proportion_seats = apportion_state_seats_by_party(reps, election['data'],
-                                                      divisor=0.5)
+                                                      divisor=params['divisor'])
 
     overhang_seats = determine_overhang(constituency_seats, proportion_seats)
 
@@ -136,7 +148,7 @@ def run_german_election(election):
 
         alloc = common.apportion_highest_averages(state_votes, total_party,
                                                   starting_seats=starting_seats,
-                                                  divisor=0.5)
+                                                  divisor=params['divisor'])
         final_vote[party] = alloc
 
     final_vote = common.flip_hierarchy(final_vote)
