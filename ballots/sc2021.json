@@ -1,0 +1,16 @@
+{
+  "name": "Scottish Parliament election, 2021",
+  "apportionment": "Scotland",
+  "census": {
+    "Central Scotland":669424,
+    "Glasgow":703978,
+    "Highlands and Islands":448311,
+    "Lothian":786439,
+    "Mid Scotland and Fife":668930,
+    "North East Scotland":768973,
+    "South Scotland":682329,
+    "West Scotland":709716
+  },
+  "seats": 129,
+  "data": "sc2021.csv"
+}
