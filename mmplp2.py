@@ -9,11 +9,13 @@ from pprint import pprint
 import common
 import german
 import new_zealand
+import scotland
 
 
 run_election_types = {
     'Germany': (german.process_params, german.run_german_election),
     'New Zealand': (new_zealand.process_params, new_zealand.run_election),
+    'Scotland': (scotland.process_params, scotland.run_election),
 }
 
 
