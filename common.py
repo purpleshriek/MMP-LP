@@ -84,7 +84,10 @@ def flatten_data(data):
             for t in flatten_data(v):
                 yield (k, *t)
         except AttributeError:
-            yield (k, v)
+            if isinstance(v, list) or isinstance(v, tuple):
+                yield (k, *v)
+            else:
+                yield (k, v)
 
 
 def render_data(name, data, fields):
@@ -102,14 +105,8 @@ def render_data(name, data, fields):
     print(header_line)
     print('=' * len(header_line))
 
-    last = None
     for row in flat:
-        render = row
-        if last:
-            render = [(ce if ce != le else '') for ce, le in zip(row, last[:-1])]
-        render = (*render, row[-1])
-        print(' | '.join(f'{item:>{w}}' for item, w in zip(render, col_widths)))
-        last = row
+        print(' | '.join(f'{item:>{w}}' for item, w in zip(row, col_widths)))
 
 def render_csv(data, fields):
     writer = csv.writer(sys.stdout)
