@@ -106,7 +106,7 @@ def render_data(name, data, fields):
     for row in flat:
         render = row
         if last:
-            render = [(ce if ce != le else '') for ce, le in zip(last[:-1], row)]
+            render = [(ce if ce != le else '') for ce, le in zip(row, last[:-1])]
         render = (*render, row[-1])
         print(' | '.join(f'{item:>{w}}' for item, w in zip(render, col_widths)))
         last = row
